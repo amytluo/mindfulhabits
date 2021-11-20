@@ -7,6 +7,7 @@ import home from './components/screens/home';
 import login from './components/screens/login';
 import user from './components/screens/userProfile';
 import register from './components/screens/register';
+import routine from './components/screens/currentRoutine';
 import { Text, Button, View} from "react-native";
 
 
@@ -83,6 +84,22 @@ function App() {
         <stack.Screen
           name="Register"
           component={register} />
+        <stack.Screen
+          name="CurrentRoutine"
+          component={routine}
+          options={{
+            headerTitle: 'Active Routine',
+            headerStyle: {
+              backgroundColor: '#a7cdbd',
+              height: 100,
+              borderRadius: 2,
+              elevation: 10,
+            },
+            headerTitleStyle: {
+              color: '#161b33',
+              fontSize: 30,
+            },
+          }} />
       </stack.Navigator>
     </NavigationContainer>
   );

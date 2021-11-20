@@ -58,11 +58,17 @@ class EditTask extends Component {
 
                 </View>
                 <View style={styles.bottom}>
-                <Pressable style={styles.button} onPress={() => {
-                    // add logic to add task to routine in backend
+                <Pressable style={styles.button1} onPress={() => {
+                    // add logic to edit task
                     this.props.navigation.navigate('Home')
                 }}>
                     <Text style ={styles.add}>Update Task</Text>
+                </Pressable>
+                <Pressable style={styles.button2} onPress={() => {
+                    // add logic to delete task
+                    this.props.navigation.navigate('Home')
+                }}>
+                    <Text style ={styles.delete}>Delete Task</Text>
                 </Pressable>
                 </View>
             </View>
@@ -98,7 +104,18 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         backgroundColor: '#FAE9CC',
     },
-    button: {
+    button1: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#a7cdbd',
+        height: 50,
+        padding: 6,
+        elevation: 10,
+        borderRadius: 8,
+        borderWidth: 1,
+        margin: 5,
+    },
+    button2: {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#FAE9CC',
@@ -113,7 +130,11 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
       },
-      add: {
+    add: {
+        color: '#161b33',
+        fontSize: 24,
+    },
+      delete: {
         color: '#161b33',
         fontSize: 24,
     },
