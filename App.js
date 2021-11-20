@@ -26,7 +26,9 @@ function App() {
             headerLeft: null,
             headerStyle: {
               backgroundColor: '#a7cdbd',
-              height: 85,
+              height: 95,
+              borderRadius: 8,
+              elevation: 10,
             },
             headerTitleStyle: {
               color: '#161b33',
@@ -46,20 +48,34 @@ function App() {
           name="AddTask"
           component={add}
           options={{
-            headerTitle: 'New Action',
+            headerTitle: 'New Task',
             headerStyle: {
-              backgroundColor: '#FAE9CC',
-              height: 85,
+              backgroundColor: '#a7cdbd',
+              height: 100,
+              borderRadius: 2,
+              elevation: 10,
             },
             headerTitleStyle: {
               color: '#161b33',
               fontSize: 30,
-              fontWeight: 'bold',
             },
           }} />
         <stack.Screen
           name="EditTask"
-          component={edit} />
+          component={edit}
+          options={{
+            headerTitle: 'Edit Task',
+            headerStyle: {
+              backgroundColor: '#a7cdbd',
+              height: 100,
+              borderRadius: 2,
+              elevation: 10,
+            },
+            headerTitleStyle: {
+              color: '#161b33',
+              fontSize: 30,
+            },
+          }} />
         <stack.Screen
           name="UserProfile"
           component={user} />

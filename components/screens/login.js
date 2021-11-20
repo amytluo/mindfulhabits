@@ -6,7 +6,7 @@ class Login extends Component {
         const { navigate } = this.props.navigation
         return (
             <View>
-                <Button title="Sign Up" onPress={() => {
+                <Button title="Login" onPress={() => {
                     this.props.navigation.navigate('Home')
                 }}></Button>
                 <Button title="Login" onPress={() => {
