@@ -7,6 +7,7 @@ import home from './components/screens/home';
 import login from './components/screens/login';
 import user from './components/screens/userProfile';
 import register from './components/screens/register';
+import { Text, Button, View} from "react-native";
 
 const stack = createStackNavigator();
 
@@ -32,7 +33,15 @@ function App() {
               fontSize: 35,
               fontWeight: 'bold',
             },
-          }} /> 
+            headerRight: () => (
+              <Button
+              onPress={() =>navigation.navigate('UserProfile')}
+              title="Info"
+              color="#fff"
+             /> 
+             ),
+            }}
+            />
         <stack.Screen
           name="AddTask"
           component={add}
