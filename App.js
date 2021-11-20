@@ -9,6 +9,7 @@ import user from './components/screens/userProfile';
 import register from './components/screens/register';
 import { Text, Button, View} from "react-native";
 
+
 const stack = createStackNavigator();
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
         <stack.Screen
           name="Home"
           component={home}
-          options={{
+          options={({navigation}) => ({
             headerTitle: 'Mindful Routine',
             headerLeft: null,
             headerStyle: {
@@ -42,7 +43,7 @@ function App() {
               color="#fff"
              /> 
              ),
-            }}
+            })}
             />
         <stack.Screen
           name="AddTask"
