@@ -6,7 +6,7 @@ import DraggableFlatList from 'react-native-draggable-flatlist';
 // if there are no tasks, create a message: press add activity to start
 // adding to your routine!
 class Home extends Component {
-    state = {taskList: [{title: 'Task', key: 'task1'}]}
+    state = {taskList: [{title: 'Task', key: 'task1'}, {title: 'Task2', key: 'task2'}]}
     updateTaskType = (taskType) => {
       this.setState({ taskType: taskType })
    }
@@ -17,9 +17,10 @@ class Home extends Component {
                   data={this.state.taskList}
                   renderItem={({item, index, separators}) => (
                     <TouchableHighlight
+                    style={styles.task}
                     key={item.key}
                     onPress={() => this.props.navigation.navigate('EditTask')}>
-                        <View style={{backgroundColor: '#FAE9CC'}}>
+                        <View style={styles.taskText}>
                             <Text>{item.title}</Text>
                         </View>
                     </TouchableHighlight>)}>
@@ -60,8 +61,17 @@ const styles = StyleSheet.create({
         fontSize: 24,
     },
     task: {
-
+        height: 100,
+        width: 100,
+        alignItems: "center",
+        justifyContent: "center",
     },
+    taskText: {
+        color: "white",
+        fontSize: 24,
+        fontWeight: "bold",
+        textAlign: "center",
+    }
 });
 
 export default Home;
