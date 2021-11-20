@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View,  StyleSheet, Pressable } from 'react-native';
+import { Text, View, StyleSheet, Pressable } from 'react-native';
 
+// if there are no tasks, create a message: press add activity to start
+// adding to your routine!
 class Home extends Component {
     render () {
         const { navigate } = this.props.navigation
@@ -8,10 +10,9 @@ class Home extends Component {
             <View style = {styles.container}>
                 <View style={styles.bottom}>
                 <Pressable style={styles.button} onPress={() => {
-                    // authenticate before navigate
                     this.props.navigation.navigate('AddTask')
                 }}>
-                    <Text style ={styles.add}>Add Routine</Text>
+                    <Text style ={styles.add}>Add Action</Text>
                 </Pressable>
                 </View>
             </View>
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FAE9CC',
     },
     add: {
-        color: 'white',
+        color: '#FAE9CC',
         fontSize: 24,
     },
 });

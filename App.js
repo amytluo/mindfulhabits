@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import active from './components/screens/activeRoutine';
 import add from './components/screens/addTask';
 import edit from './components/screens/editTask';
 import home from './components/screens/home';
@@ -22,7 +21,7 @@ function App() {
           name="Home"
           component={home}
           options={{
-            headerTitle: 'Routines',
+            headerTitle: 'Mindful Routine',
             headerLeft: null,
             headerStyle: {
               backgroundColor: '#a7cdbd',
@@ -35,11 +34,20 @@ function App() {
             },
           }} /> 
         <stack.Screen
-          name="ActiveRoutine"
-          component={active} />
-        <stack.Screen
           name="AddTask"
-          component={add} />
+          component={add}
+          options={{
+            headerTitle: 'New Action',
+            headerStyle: {
+              backgroundColor: '#FAE9CC',
+              height: 85,
+            },
+            headerTitleStyle: {
+              color: '#161b33',
+              fontSize: 30,
+              fontWeight: 'bold',
+            },
+          }} />
         <stack.Screen
           name="EditTask"
           component={edit} />
