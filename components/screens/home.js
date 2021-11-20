@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
+import { FlatList, TouchableHighlight } from 'react-native-gesture-handler';
+import DraggableFlatList from 'react-native-draggable-flatlist';
 
 // if there are no tasks, create a message: press add activity to start
 // adding to your routine!
 class Home extends Component {
+    state = {taskList: [{title: 'Task', key: 'task1'}]}
+    updateTaskType = (taskType) => {
+      this.setState({ taskType: taskType })
+   }
     render () {
-        const { navigate } = this.props.navigation
         return (
             <View style = {styles.container}>
+                <FlatList
+                  data={this.state.taskList}
+                  renderItem={({item, index, separators}) => (
+                    <TouchableHighlight
+                    key={item.key}
+                    onPress={() => this.props.navigation.navigate('EditTask')}>
+                        <View style={{backgroundColor: '#FAE9CC'}}>
+                            <Text>{item.title}</Text>
+                        </View>
+                    </TouchableHighlight>)}>
+                </FlatList>
                 <View style={styles.bottom}>
                 <Pressable style={styles.button} onPress={() => {
                     this.props.navigation.navigate('AddTask')
                 }}>
-                    <Text style ={styles.add}>Add Action</Text>
+                    <Text style ={styles.add}>Add Task</Text>
                 </Pressable>
                 </View>
             </View>
@@ -42,6 +58,9 @@ const styles = StyleSheet.create({
     add: {
         color: '#FAE9CC',
         fontSize: 24,
+    },
+    task: {
+
     },
 });
 
