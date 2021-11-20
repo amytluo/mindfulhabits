@@ -21,7 +21,7 @@ function App() {
         <stack.Screen
           name="Home"
           component={home}
-          options={{
+          options={({ navigation }) => ({
             headerTitle: 'Mindful Routine',
             headerLeft: null,
             headerStyle: {
@@ -41,8 +41,9 @@ function App() {
               title="Info"
               color="#fff"
              /> 
+
              ),
-            }}
+            })}
             />
         <stack.Screen
           name="AddTask"
@@ -58,6 +59,7 @@ function App() {
             headerTitleStyle: {
               color: '#161b33',
               fontSize: 30,
+              fontWeight: 'bold',
             },
           }} />
         <stack.Screen
@@ -76,6 +78,7 @@ function App() {
               fontSize: 30,
             },
           }} />
+          component={edit} />
         <stack.Screen
           name="UserProfile"
           component={user} />
