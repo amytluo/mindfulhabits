@@ -20,7 +20,23 @@ function App() {
       <stack.Navigator>
         <stack.Screen
           name="Login"
-          component={login} />
+          component={login}
+          options={{
+            headerTitle: 'Login',
+            headerStyle: {
+              backgroundColor: '#a7cdbd',
+              height: 100,
+              borderRadius: 2,
+              elevation: 10,
+            },
+            headerTitleStyle: {
+              color: '#161b33',
+              fontSize: 35,
+              fontWeight: 'bold',
+            },
+            }}
+          />
+          
         <stack.Screen
           name="Home"
           component={home}
