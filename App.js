@@ -60,7 +60,7 @@ function App() {
           name="Home"
           component={home}
           options={({navigation}) => ({
-            headerTitle: 'Mindful Routine',
+            headerTitle: 'Mindful Habits',
             headerLeft: null,
             headerStyle: {
               backgroundColor: '#a7cdbd',
