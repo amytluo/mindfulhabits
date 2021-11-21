@@ -6,12 +6,13 @@ class Login extends Component {
         const { navigate } = this.props.navigation
         return (
             <View style = {styles.container}>
-                <Pressable style={styles.button} onPress={() => {
-                    this.props.navigation.navigate('Register')
-                }}>
-                    <Text style ={styles.addText}>Register</Text>
-                </Pressable>
-                <Pressable style={styles.button} onPress={() => {
+                <View style={styles.bottom}>
+                  <Pressable style={styles.button} onPress={() => {
+                      this.props.navigation.navigate('Register')
+                  }}>
+                      <Text style ={styles.addText}>Register</Text>
+                  </Pressable>
+                  <Pressable style={styles.button} onPress={() => {
                     /** 
                      *   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
@@ -44,10 +45,11 @@ class Login extends Component {
     </View>
   );
 }**/
-                    this.props.navigation.navigate('Home')
-                }}>
-                    <Text style ={styles.addText}>Login</Text>
-                </Pressable>
+                      this.props.navigation.navigate('Home')
+                  }}>
+                      <Text style ={styles.addText}>Login</Text>
+                  </Pressable>
+                </View>
             </View>
         );
     }
@@ -61,7 +63,10 @@ const styles = StyleSheet.create({
     color: '#161b33',
     fontSize: 24,
   },
-  
+  bottom: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
   button: {
     justifyContent: 'center',
     alignItems: 'center',

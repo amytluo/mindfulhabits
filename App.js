@@ -37,6 +37,25 @@ function App() {
             }}
           />
           
+          <stack.Screen 
+            name="Register"
+            component={register}
+            options={{
+              headerTitle: 'Register',
+              headerStyle: {
+              backgroundColor: '#a7cdbd',
+              height: 100,
+              borderRadius: 2,
+              elevation: 10,
+            },
+            headerTitleStyle: {
+              color: '#161b33',
+              fontSize: 35,
+              fontWeight: 'bold',
+            },
+            }}
+          />
+
         <stack.Screen
           name="Home"
           component={home}
@@ -112,9 +131,6 @@ function App() {
         <stack.Screen
           name="UserProfile"
           component={user} />
-        <stack.Screen
-          name="Register"
-          component={register} />
         <stack.Screen
           name="CurrentRoutine"
           component={routine}
