@@ -59,7 +59,7 @@ class CurrentRoutine extends Component {
 
 
     render () {
-        var tasks =  this.props.route.params.taskList;
+        var tasks = this.props.route.params.taskList;
         var num = this.props.route.params.num;
         this.state.props = this.props
         // maintain index of current task, list of tasks

@@ -36,7 +36,7 @@ class Home extends Component {
                 </DraggableFlatList>
                 <View style={styles.bottom}>
                 <Pressable style={styles.startRoutine} onPress={() => {
-                    this.props.navigation.navigate('CurrentRoutine')
+                    this.props.navigation.navigate('CurrentRoutine', {taskList: this.state.taskList, num: this.state.taskList.length - 1})
                 }}>
                     <Text style ={styles.startText}>Start Routine!</Text>
                 </Pressable>
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     taskText: {
-        color: "white",
+        color: 'floralwhite',
         fontSize: 24,
         fontWeight: "bold",
         textAlign: "center",
