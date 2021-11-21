@@ -19,9 +19,43 @@ function App() {
   return (
     <NavigationContainer>
       <stack.Navigator>
-        <stack.Screen
+      <stack.Screen
           name="Login"
-          component={login} />
+          component={login}
+          options={{
+            headerTitle: 'Login',
+            headerStyle: {
+              backgroundColor: '#a7cdbd',
+              height: 100,
+              borderRadius: 2,
+              elevation: 10,
+            },
+            headerTitleStyle: {
+              color: '#161b33',
+              fontSize: 35,
+              fontWeight: 'bold',
+            },
+            }}
+          />
+          
+          <stack.Screen 
+            name="Register"
+            component={register}
+            options={{
+              headerTitle: 'Register',
+              headerStyle: {
+              backgroundColor: '#a7cdbd',
+              height: 100,
+              borderRadius: 2,
+              elevation: 10,
+            },
+            headerTitleStyle: {
+              color: '#161b33',
+              fontSize: 35,
+              fontWeight: 'bold',
+            },
+            }}
+          />
         <stack.Screen
           name="Home"
           component={home}
@@ -111,10 +145,6 @@ function App() {
               fontSize: 30,
             },
           }}/>
-          
-        <stack.Screen
-          name="Register"
-          component={register} />
         <stack.Screen
           name="Reflection"
           component={reflection} />

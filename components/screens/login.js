@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { Text, Button, View} from "react-native";
+import { Text, Button, View, StyleSheet, Pressable} from "react-native";
 
 class Login extends Component {
     render () {
         const { navigate } = this.props.navigation
         return (
-            <View>
-                <Button title="Login" onPress={() => {
-                    this.props.navigation.navigate('Home')
-                }}></Button>
-                <Button title="Login" onPress={() => {
+            <View style = {styles.container}>
+                <View style={styles.bottom}>
+                  <Pressable style={styles.button} onPress={() => {
+                      this.props.navigation.navigate('Register')
+                  }}>
+                      <Text style ={styles.addText}>Register</Text>
+                  </Pressable>
+                  <Pressable style={styles.button} onPress={() => {
                     /** 
                      *   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
@@ -42,11 +45,45 @@ class Login extends Component {
     </View>
   );
 }**/
-                    this.props.navigation.navigate('Home')
-                }}></Button>
+                      this.props.navigation.navigate('Home')
+                  }}>
+                      <Text style ={styles.addText}>Login</Text>
+                  </Pressable>
+                </View>
             </View>
         );
     }
 }
 
+
 export default Login;
+
+const styles = StyleSheet.create({
+  addText: {
+    color: '#161b33',
+    fontSize: 24,
+  },
+  bottom: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+  button: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#a7cdbd',
+    height: 50,
+    padding: 6,
+    elevation: 10,
+    borderRadius: 8,
+    margin: 5,
+    borderWidth: 1,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#FAE9CC',
+  },
+  startText: {
+    color: '#FAE9CC',
+    fontSize: 24,
+  }
+});
