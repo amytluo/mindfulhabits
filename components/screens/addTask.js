@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
         elevation: 10,
         borderRadius: 8,
         margin: 5,
+        borderWidth: 1,
     },
       bottom: {
         flex: 1,

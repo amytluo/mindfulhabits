@@ -7,7 +7,10 @@ import home from './components/screens/home';
 import login from './components/screens/login';
 import user from './components/screens/userProfile';
 import register from './components/screens/register';
-import { Text, Button, View} from "react-native";
+import { TouchableHighlight } from 'react-native';
+import { Text, Button, View, Image} from "react-native";
+import { USERPROFILE } from './images/index';
+import routine from './components/screens/currentRoutine';
 
 const stack = createStackNavigator();
 
@@ -21,7 +24,7 @@ function App() {
         <stack.Screen
           name="Home"
           component={home}
-          options={{
+          options={({navigation}) => ({
             headerTitle: 'Mindful Routine',
             headerLeft: null,
             headerStyle: {
@@ -36,13 +39,27 @@ function App() {
               fontWeight: 'bold',
             },
             headerRight: () => (
-              <Button
-              onPress={() =>navigation.navigate('UserProfile')}
-              title="Info"
-              color="#fff"
-             /> 
+              <TouchableHighlight
+              style={{  
+                width: 60,
+                height: 60,
+                borderRadius: 100 / 2,
+                overflow: "hidden",
+                borderWidth: 0,
+                marginRight: 8,
+                borderColor: "red",
+                resizeMode: 'contain'}}
+              onPress={() =>navigation.navigate('UserProfile')} >
+             <Image 
+             style={{
+              height: 60,
+              width: 60,
+             
+             }}
+                source = {USERPROFILE}/>
+              </TouchableHighlight>
              ),
-            }}
+            })}
             />
         <stack.Screen
           name="AddTask"
@@ -82,6 +99,22 @@ function App() {
         <stack.Screen
           name="Register"
           component={register} />
+        <stack.Screen
+          name="CurrentRoutine"
+          component={routine}
+          options={{
+            headerTitle: 'Active Routine',
+            headerStyle: {
+              backgroundColor: '#a7cdbd',
+              height: 100,
+              borderRadius: 2,
+              elevation: 10,
+            },
+            headerTitleStyle: {
+              color: '#161b33',
+              fontSize: 30,
+            },
+          }} />
       </stack.Navigator>
     </NavigationContainer>
   );
