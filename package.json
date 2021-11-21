@@ -19,12 +19,9 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
-<<<<<<< HEAD
     "react-native-countdown-component": "^2.7.1",
-=======
     "react-native-collapsible": "^1.6.0",
     "react-native-collapsible-list": "^2.2.2",
->>>>>>> 563820a02d37197a254aca56c667d4260496fd68
     "react-native-draggable-flatlist": "^3.0.2",
     "react-native-emoji-selector": "^0.2.0",
     "react-native-gesture-handler": "~1.10.2",
