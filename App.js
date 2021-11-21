@@ -7,6 +7,7 @@ import home from './components/screens/home';
 import login from './components/screens/login';
 import user from './components/screens/userProfile';
 import register from './components/screens/register';
+import reflection from './components/screens/reflection';
 import { TouchableHighlight } from 'react-native';
 import { Text, Button, View, Image} from "react-native";
 import { USERPROFILE } from './images/index';
@@ -99,6 +100,9 @@ function App() {
         <stack.Screen
           name="Register"
           component={register} />
+        <stack.Screen
+          name="Reflection"
+          component={reflection} />
         <stack.Screen
           name="CurrentRoutine"
           component={routine}
