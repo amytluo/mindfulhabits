@@ -22,7 +22,7 @@ class CurrentRoutine extends Component {
                 marginRight: 25,
                 borderWidth: 1, 
                 justifyContent: 'center'}}>
-              <Text style={{fontSize: 36,}}>{item.title}</Text>
+              <Text style={{fontSize: 26,}}>{item.title}</Text>
 
               {item.type == 'timer' && <CountDown
                     until={item.timer * 60}
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
       },
       description: {
         color: '#a7cdbd',
-        marginTop: 30,
+        marginTop: 10,
       },
       reflectionButton: {
         justifyContent: 'center',

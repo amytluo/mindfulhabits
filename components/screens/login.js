@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Text, Button, View, StyleSheet, Pressable} from "react-native";
+import { Text, Button, View, StyleSheet, Pressable, Image} from "react-native";
+
 
 class Login extends Component {
     render () {
         const { navigate } = this.props.navigation
         return (
             <View style = {styles.container}>
+               
                 <View style={styles.bottom}>
                   <Pressable style={styles.button} onPress={() => {
                       this.props.navigation.navigate('Register')
@@ -59,6 +61,11 @@ class Login extends Component {
 export default Login;
 
 const styles = StyleSheet.create({
+image:{
+width: 100,
+height: 100,
+
+},
   addText: {
     color: '#161b33',
     fontSize: 24,
@@ -75,8 +82,12 @@ const styles = StyleSheet.create({
     padding: 6,
     elevation: 10,
     borderRadius: 8,
-    margin: 5,
+    margin: -50,
     borderWidth: 1,
+    marginBottom: 80,
+    marginLeft: 20,
+    marginRight: 20,
+    
   },
   container: {
     flex: 1,
