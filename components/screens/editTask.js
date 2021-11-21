@@ -5,8 +5,7 @@ import {Picker} from '@react-native-picker/picker';
 
 class EditTask extends Component {
         //const taskID = NavigationContext.getParams('taskID');
-
-    state = {taskType: 'timer', time: '1'}
+    state = {taskType: '', name: '', time: 1, description: ''}
     updateTaskType = (taskType) => {
       this.setState({ taskType: taskType })
    }
@@ -14,14 +13,16 @@ class EditTask extends Component {
        this.setState({time: time})
    }
     render () {
-        //const [selectedType, setSelectedType] = useState();
+        this.state.name = this.props.route.params.name;
+        this.state.taskType = this.props.route.params.type;
+        this.state.description = this.props.route.params.description;
+        this.state.time = this.props.route.params.timer;
         return (
             <View style={styles.container}>
                 <Text style={styles.name}>Name</Text>
                 <TextInput
                 style={styles.input}
-                placeholder="Enter a name for your task"
-                ></TextInput>
+                >{this.state.name}</TextInput>
                 <Text style={styles.type}>Task type</Text>
                 <View style={styles.horizBox}>
                 <View style={styles.picker}>
@@ -40,9 +41,8 @@ class EditTask extends Component {
                     <View style={styles.min}>
                     <TextInput
                     style={styles.timeInput}
-                    placeholder="1"
                     keyboardType="numeric"
-                    value={this.state.time}
+                    value={'' + this.state.time}
                     onChangeText={time => this.updateTime(time)}
                     />
                     </View>
@@ -52,8 +52,11 @@ class EditTask extends Component {
                 <Text style={styles.descriptionTitle}>Description</Text>
                 <TextInput
                 style={styles.description}
-                placeholder="Enter a description for your task. (optional)"
-                ></TextInput>
+                multiline={true}
+                onChangeText={time => this.state.time = time}
+                >
+                    {this.state.description}
+                </TextInput>
                 <View style={styles.bump}>
 
                 </View>

@@ -58,7 +58,7 @@ class AddTask extends Component {
                 <View style={styles.bottom}>
                 <Pressable style={styles.button} onPress={() => {
                     // add logic to add task to routine in backend
-                    this.props.navigation.navigate('Home')
+                    this.props.navigation.navigate('Home', {name: item?.title, type: item?.type, timer: item?.timer, description: item?.description})
                 }}>
                     <Text style ={styles.add}>Add to routine</Text>
                 </Pressable>
