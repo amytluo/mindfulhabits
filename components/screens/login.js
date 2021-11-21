@@ -7,9 +7,7 @@ class Login extends Component {
         const { navigate } = this.props.navigation
         return (
             <View style = {styles.container}>
-                <Image style={styles.image}
-                  source = {require('../screens/images/userprofile.png')}/>
-
+               
                 <View style={styles.bottom}>
                   <Pressable style={styles.button} onPress={() => {
                       this.props.navigation.navigate('Register')
