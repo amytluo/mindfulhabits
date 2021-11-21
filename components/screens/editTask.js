@@ -5,7 +5,7 @@ import {Picker} from '@react-native-picker/picker';
 
 class EditTask extends Component {
         //const taskID = NavigationContext.getParams('taskID');
-    state = {taskType: '', name: '', time: 1, description: ''}
+    state = {taskType: '', name: '', time: "1", description: ''}
     updateTaskType = (taskType) => {
       this.setState({ taskType: taskType })
    }

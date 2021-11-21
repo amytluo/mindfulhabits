@@ -8,8 +8,8 @@ import DraggableFlatList from 'react-native-draggable-flatlist';
 // adding to your routine!
 class Home extends Component {
     state = {taskList: [{title: 'Mindful Breathing', key: 'task1', description: 'Sit comfortably. Relax, and start counting your breaths from 1 to 5. Count on the exhale. Breathe normally. Gradually start becoming aware of your breathing.', type: 'timer', timer: 2}, 
-    {title: 'Mental Noting', key: 'task2', description: 'Find a comfortable place where you will not be disturbed. Notice what you are thinking about at the moment and write it down. Use the form "I am thinking about X".', type: 'reflection'},
-    {title: 'Negative Judgments', key: 'task3', description: 'In this exercise we are going to note down when we have negative judgments over the course of the day. Briefly describe the situation. Write down what you were thinking about. Write down the exact words that crossed your mind. Write down how you felt when you were judging the situation. What did you do after the situation?', type: 'untimed'},], }
+    {title: 'Mental Noting', key: 'task2', description: 'Find a comfortable place where you will not be disturbed. Notice what you are thinking about at the moment and write it down. Use the form "I am thinking about X".', type: 'reflection', timer: 0,},
+    {title: 'Negative Judgments', key: 'task3', description: 'In this exercise we are going to note down when we have negative judgments over the course of the day. Briefly describe the situation. Write down what you were thinking about. Write down the exact words that crossed your mind. Write down how you felt when you were judging the situation. What did you do after the situation?', type: 'untimed', timer: 0,},], }
     setTaskList = (taskList) => {
       this.setState({ taskList: taskList })
     }
@@ -18,7 +18,7 @@ class Home extends Component {
           <TouchableOpacity 
           style={styles.item}
           onLongPress={drag}
-          onPress={() => this.props.navigation.navigate('EditTask', {name: item.title, type: item.type, description: item.description, timer: item.time})}>
+          onPress={() => this.props.navigation.navigate('EditTask', {name: item.title, type: item.type, description: item.description, timer: item.timer})}>
             <Text style= {styles.taskText}>{item?.title}</Text>
           </TouchableOpacity>
         </View>
