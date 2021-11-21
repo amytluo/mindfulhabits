@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Pressable, Image, Button } from 'react-native';
 
-
 class UserProfile extends Component {
-    
-    
     render () {
-      
         return (
             <View style={styles.container1}>
             <Text style={styles.nameText}>{"Jackson"}</Text>
@@ -14,7 +10,9 @@ class UserProfile extends Component {
             
                 source = {require('./images/userprofile.png')}/>
                 
-                <Text style ={styles.addText2}>You are on a 5 day streak! 🔥 Keep it up!</Text>
+                <Text style ={styles.addText2}>You are on a 5 day streak! 🔥 </Text>
+                <Text style ={styles.addText2}> Keep it up!</Text>
+
                 <View style={styles.bottom}>
                 <Pressable style={styles.startRoutine} onPress={() => {
                     this.props.navigation.navigate('CurrentRoutine')
