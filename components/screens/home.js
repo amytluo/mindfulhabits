@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Pressable, TouchableOpacity } from 'react-native';
+import { FlatList, TouchableHighlight } from 'react-native-gesture-handler';
 import DraggableFlatList from 'react-native-draggable-flatlist';
 
 
 // if there are no tasks, create a message: press add activity to start
 // adding to your routine!
 class Home extends Component {
-    state = {taskList: [{title: 'Task 1', key: 'task1', description: 'description', type: 'timer', timer: 2}, 
-    {title: 'Task 2', key: 'task2', description: 'description', type: 'reflection'},
-    {title: 'Task 3', key: 'task3', description: 'description', type: 'untimed'},], }
+    state = {taskList: [{title: 'Task1', key: 'task1'}, {title: 'Task2', key: 'task2'}, {title: 'Task3', key: 'task3'}], }
     setTaskList = (taskList) => {
       this.setState({ taskList: taskList })
     }
@@ -35,7 +34,7 @@ class Home extends Component {
                 </DraggableFlatList>
                 <View style={styles.bottom}>
                 <Pressable style={styles.startRoutine} onPress={() => {
-                    this.props.navigation.navigate('CurrentRoutine', {taskList: this.state.taskList, num: this.state.taskList.length - 1})
+                    this.props.navigation.navigate('CurrentRoutine')
                 }}>
                     <Text style ={styles.startText}>Start Routine!</Text>
                 </Pressable>
@@ -95,7 +94,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     taskText: {
-        color: 'floralwhite',
+        color: "white",
         fontSize: 24,
         fontWeight: "bold",
         textAlign: "center",

@@ -7,7 +7,6 @@ import home from './components/screens/home';
 import login from './components/screens/login';
 import user from './components/screens/userProfile';
 import register from './components/screens/register';
-import reflection from './components/screens/reflection';
 import { TouchableHighlight } from 'react-native';
 import { Text, Button, View, Image} from "react-native";
 import { USERPROFILE } from './images/index';
@@ -51,7 +50,6 @@ function App() {
               elevation: 10,
             },
             headerTitleStyle: {
-              
               color: '#161b33',
               fontSize: 35,
               fontWeight: 'bold',
@@ -113,27 +111,10 @@ function App() {
           }} />
         <stack.Screen
           name="UserProfile"
-          component={user} 
-          options={{
-            headerTitle: 'User Profile',
-            headerStyle: {
-              backgroundColor: '#a7cdbd',
-              height: 100,
-              borderRadius: 2,
-              elevation: 10,
-            },
-            headerTitleStyle: {
-              color: '#161b33',
-              fontSize: 30,
-            },
-          }}/>
-          
+          component={user} />
         <stack.Screen
           name="Register"
           component={register} />
-        <stack.Screen
-          name="Reflection"
-          component={reflection} />
         <stack.Screen
           name="CurrentRoutine"
           component={routine}
