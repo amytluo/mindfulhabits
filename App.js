@@ -34,6 +34,7 @@ function App() {
               elevation: 10,
             },
             headerTitleStyle: {
+              
               color: '#161b33',
               fontSize: 35,
               fontWeight: 'bold',
@@ -95,7 +96,21 @@ function App() {
           }} />
         <stack.Screen
           name="UserProfile"
-          component={user} />
+          component={user} 
+          options={{
+            headerTitle: 'User Profile',
+            headerStyle: {
+              backgroundColor: '#a7cdbd',
+              height: 100,
+              borderRadius: 2,
+              elevation: 10,
+            },
+            headerTitleStyle: {
+              color: '#161b33',
+              fontSize: 30,
+            },
+          }}/>
+          
         <stack.Screen
           name="Register"
           component={register} />
